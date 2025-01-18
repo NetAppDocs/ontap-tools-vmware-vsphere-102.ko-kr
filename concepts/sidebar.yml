@@ -1,0 +1,26 @@
+---
+section: concepts
+title: 개념
+entries:
+- title: VMware vSphere용 ONTAP 툴 개요
+  url: "/concepts/ontap-tools-overview.html"
+- title: 주요 개념 및 용어
+  url: "/concepts/ontap-tools-concepts-terms.html"
+- title: 역할 기반 액세스 제어
+  entries:
+  - title: 개요
+    url: "/concepts/vcenter-server-role-based-access-control-features.html"
+  - title: vCenter Server 사용 권한
+    url: "/concepts/vcenter-server-permissions.html"
+  - title: vCenter Server에 대한 사용 권한을 할당하고 수정합니다
+    url: "/concepts/key-points-about-assign-and-modify-permissions.html"
+  - title: ONTAP 툴에 필요한 VMware vSphere 작업에 필요한 권한
+    url: "/concepts/privileges-required.html"
+  - title: 권장되는 ONTAP 역할
+    url: "/concepts/ontap-roles.html"
+- title: VMware vSphere용 ONTAP 툴의 고가용성
+  url: "/concepts/high-availability.html"
+- title: AutoSupport
+  url: "/concepts/autosupport.html"
+- title: ONTAP 도구 관리자 사용자 인터페이스
+  url: "/configure/manager-user-interface.html"

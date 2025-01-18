@@ -1,0 +1,88 @@
+---
+permalink: automation/overview-rest-apis.html 
+sidebar: sidebar 
+keywords: REST APIs, swagger 
+summary: REST API를 사용하여 VMware vSphere 관리 작업을 위한 여러 ONTAP 툴을 수행하는 방법을 설명합니다. REST API는 Swagger 웹 페이지를 통해 표시됩니다. 
+---
+= REST API 개요
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+REST API를 사용하여 VMware vSphere 관리 작업을 위한 여러 ONTAP 툴을 수행할 수 있습니다. REST API는 Swagger 웹 페이지를 통해 표시됩니다.
+
+\https://loadbalancerIP:8443/_에서 제공하는 Swagger 웹 페이지에 액세스하여 REST API 설명서를 표시하고 API 호출을 수동으로 실행할 수 있습니다.
+
+
+NOTE: 모든 API에는 swagger 페이지에 언급된 요청 본문과 예제가 있습니다. 이 섹션에 제공된 워크플로 및 예제는 참조용으로만 사용됩니다.
+
+
+
+== VMware vSphere REST API용 ONTAP 툴에 액세스하는 방법
+
+여러 가지 방법으로 ONTAP REST API에 액세스할 수 있습니다.
+
+
+
+== 네트워크 고려 사항
+
+다음 인터페이스를 통해 REST API에 연결할 수 있습니다.
+
+* 클러스터 관리 LIF
+* 노드 관리 LIF
+* SVM 관리 LIF
+
+
+사용하려는 LIF는 HTTPS 관리 프로토콜을 지원하도록 구성해야 합니다. 또한 네트워크의 방화벽 구성에서 HTTPS 트래픽을 허용해야 합니다.
+
+
+NOTE: 클러스터 관리 LIF는 항상 사용해야 합니다. 이렇게 하면 모든 노드에서 API 요청의 로드 밸런싱을 수행하고 오프라인이거나 연결 문제가 발생하는 노드를 피할 수 있습니다. 여러 클러스터 관리 LIF가 구성된 경우 REST API에 액세스하는 것과 동일한 것입니다.
+
+
+
+== VMware vSphere API용 ONTAP 툴 온라인 설명서 페이지
+
+VMware vSphere용 NetApp ONTAP 툴의 지원 페이지에 있는 하이퍼링크에서 Swagger에 액세스할 수 있습니다.
+
+최신 버전의 API에 대한 설명서 페이지에 액세스하는 데 사용되는 URL 형식은 다음과 같습니다.
+
+' https://<loadbalancer_ip_address>/docs/api '
+
+
+
+== 사용자 정의 소프트웨어 및 도구
+
+VMware vSphere API용 ONTAP 툴은 여러 가지 프로그래밍 언어와 툴을 사용하여 액세스할 수 있습니다. Python, Java, Curl, PowerShell을 비롯한 다양한 옵션이 제공됩니다. API를 사용하는 프로그램, 스크립트 또는 도구는 REST 웹 서비스 클라이언트로 작동합니다. 프로그래밍 언어를 사용하면 API를 보다 깊이 이해할 수 있고 VMware vSphere 관리를 위한 ONTAP 툴을 자동화할 수 있습니다.
+
+최신 버전의 API에 직접 액세스하는 데 사용되는 기본 URL의 형식은 다음과 같습니다.
+
+' https://<loadbalancer_ip_address>/API '
+
+여러 버전이 지원되는 특정 API 버전에 액세스하려면 URL 형식은 다음과 같습니다.
+
+' https://<loadbalancer_ip_address>/api/v1 '
+
+
+
+== Swagger UI를 통해 VMware vSphere API용 ONTAP 툴 참조 문서에 액세스합니다
+
+로컬 ONTAP 시스템에서 Swagger UI를 통해 ONTAP REST API 설명서에 액세스할 수 있습니다.
+
+* 시작하기 전에 *
+
+다음과 같은 항목이 있어야 합니다.
+
+* ONTAP 클러스터 관리 LIF의 IP 주소 또는 호스트 이름입니다
+* ONTAP REST API 액세스 권한이 있는 계정의 사용자 이름과 암호입니다
+
+
+.단계
+. 브라우저에 URL을 입력하고 * Enter *:_\https://<ip_address>/docs/api_를 누릅니다
+. ONTAP 계정을 사용하여 로그인합니다
++
+ONTAP API 설명서 페이지는 하단의 주요 리소스 범주로 구성된 API 호출과 함께 표시됩니다.
+
+. 개별 API 호출의 예로 * cluster * 범주로 스크롤하고 * get/cluster * 를 클릭합니다.
+

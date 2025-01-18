@@ -1,0 +1,59 @@
+---
+permalink: configure/add-storage-backend.html 
+sidebar: sidebar 
+keywords:  
+summary: 스토리지 백엔드는 ESXi 호스트가 데이터 스토리지에 사용하는 시스템입니다. 
+---
+= 스토리지 백엔드를 추가합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+스토리지 백엔드는 ESXi 호스트가 데이터 스토리지에 사용하는 시스템입니다. ONTAP Tools Manager 또는 vSphere Client UI를 사용하여 스토리지 백엔드를 추가할 수 있습니다.
+
+* 이 작업에 대한 정보 *
+
+이 작업은 ONTAP 클러스터를 온보딩하는 데 도움이 됩니다. ONTAP Tools Manager를 사용하여 스토리지 백엔드를 추가하면 스토리지 백엔드가 글로벌 클러스터에 추가됩니다. 글로벌 클러스터를 vCenter Server 인스턴스와 연결하여 SVM 사용자를 VVOL 데이터 저장소 프로비저닝에 사용할 수 있도록 합니다.
+
+[role="tabbed-block"]
+====
+.ONTAP 도구 관리자 사용
+--
+
+NOTE: 스토리지 백엔드는 ONTAP tools Manager 또는 ONTAP 툴 API에서 추가하면 전 세계적으로 적용됩니다. 스토리지 백엔드는 vCenter Server API에서 추가할 때 로컬입니다. 예를 들어, 멀티 테넌트 설정에서 스토리지 백엔드(클러스터)를 글로벌 및 SVM을 로컬에서 추가하여 SVM 사용자 자격 증명을 사용할 수 있습니다.
+
+* 단계 *
+
+. 웹 브라우저에서 ONTAP 도구 관리자를 실행합니다. `\https://loadBalanceIP:8443/virtualization/ui/`
+. 구축 중에 제공한 VMware vSphere 관리자 자격 증명용 ONTAP 툴을 사용하여 로그인합니다.
+. 측면 표시줄에서 * Storage Backend * 를 선택합니다.
+. 추가 * 를 선택합니다.
+. 서버 IP 주소 또는 FQDN, 사용자 이름 및 암호 세부 정보를 입력하고 * 추가 * 를 선택합니다.
++
+
+NOTE: IPv4 및 IPv6 관리 LIF가 지원됩니다. 관리 LIF가 있는 SVM 사용자 기반 자격 증명도 지원됩니다.
+
+
+
+--
+.vSphere Client UI 사용
+--
+
+NOTE: vSphere Client UI를 사용하여 스토리지 백엔드를 추가하는 경우 VVOL 데이터 저장소에서 SVM 사용자를 직접 추가할 수 없습니다.
+
+. 을 사용하여 vSphere Client에 로그인합니다 `\https://vcenterip/ui`
+. 바로 가기 페이지에서 플러그인 섹션 아래의 * NetApp ONTAP tools * 를 클릭합니다.
+. ONTAP 도구의 왼쪽 창에서 * 스토리지 백엔드 * 로 이동한 후 * 추가 * 를 선택합니다.
+. Add Storage Backend * 창에서 서버 IP 주소, 사용자 이름, 암호 및 포트 세부 정보를 입력하고 * Add * 를 클릭합니다.
++
+
+NOTE: 클러스터 기반 자격 증명, IPv4 및 IPv6 관리 LIF를 추가하거나 SVM 관리 LIF와 함께 SVM 기반 자격 증명을 제공하여 SVM 사용자를 직접 추가할 수 있습니다.
+
+
+
+목록이 새로 고쳐지고 목록에서 새로 추가된 스토리지 백엔드를 볼 수 있습니다.
+
+--
+====

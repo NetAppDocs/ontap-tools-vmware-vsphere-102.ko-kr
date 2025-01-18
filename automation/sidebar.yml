@@ -1,0 +1,8 @@
+---
+section: automation
+title: REST API를 사용하여 자동화
+entries:
+- title: REST API 개요
+  url: "/automation/overview-rest-apis.html"
+- title: REST API를 시작합니다
+  url: "/automation/get-started-with-the-rest-api.html"

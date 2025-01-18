@@ -1,0 +1,86 @@
+---
+permalink: configure/esxi-host-values.html 
+sidebar: sidebar 
+keywords:  
+summary: 최상의 성능과 성공적인 페일오버를 보장하기 위해 VMware vSphere용 ONTAP 툴을 사용하여 ESXi 호스트에서 시간 초과 및 기타 값을 설정할 수 있습니다. VMware vSphere용 ONTAP 툴 세트는 내부 NetApp 테스트를 기반으로 합니다. 
+---
+= ESXi 호스트 값을 설정합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+최상의 성능과 성공적인 페일오버를 보장하기 위해 VMware vSphere용 ONTAP 툴을 사용하여 ESXi 호스트에서 시간 초과 및 기타 값을 설정할 수 있습니다. VMware vSphere용 ONTAP 툴 세트는 내부 NetApp 테스트를 기반으로 합니다.
+
+ESXi 호스트에서 다음 값을 설정할 수 있습니다.
+
+
+
+== HBA/CNA 어댑터 설정
+
+NetApp 스토리지 시스템에 대해 권장되는 HBA 시간 초과 설정을 설정합니다.
+
+* * Disk.QFullSampleSize *
++
+모든 설정에 대해 이 값을 32로 설정합니다. 이 값을 설정하면 I/O 오류가 발생하지 않습니다.
+
+* * Disk.QFullThreshold *
++
+모든 설정에 대해 이 값을 8로 설정합니다. 이 값을 설정하면 I/O 오류가 방지됩니다.
+
+* * Emulex FC HBA 시간 초과 *
++
+기본값을 사용합니다.
+
+* * QLogic FC HBA 시간 초과 *
++
+기본값을 사용합니다.
+
+
+
+
+
+== MPIO 설정
+
+MPIO 설정은 NetApp 스토리지 시스템에 대한 기본 경로를 정의합니다. MPIO 설정은 상호 연결 케이블을 통과하는 최적화되지 않은 경로와 달리 사용 가능한 경로 중 최적화되는 경로를 결정하고 기본 경로를 이러한 경로 중 하나로 설정합니다.
+
+고성능 환경에서 또는 단일 LUN 데이터 저장소를 사용하여 성능을 테스트하는 경우 기본 IOPS 설정인 1000에서 값 1로 라운드 로빈(VMW_PSP_RR) PSP(경로 선택 정책)의 로드 밸런싱 설정을 변경하는 것이 좋습니다.
+
+
+
+== NFS 설정
+
+* * Net.TcpipHeapSize *
++
+이 값을 32으로 설정합니다.
+
+* * Net.TcpipHeapMax *
++
+이 값을 1024MB로 설정합니다.
+
+* * NFS.MaxVolumes *
++
+이 값을 256으로 설정합니다.
+
+* * NFS41.MaxVolumes *
++
+이 값을 256으로 설정합니다.
+
+* NFS.MaxQueueDepth *
++
+큐 병목 현상을 방지하려면 이 값을 128 이상으로 설정하십시오.
+
+* * nfs.HeartbeatMaxFailures *
++
+모든 NFS 구성에 대해 이 값을 10로 설정합니다.
+
+* * nfs.HeartbeatFrequency * 를 선택합니다
++
+모든 NFS 구성에 대해 이 값을 12로 설정합니다.
+
+* * nfs.HeartbeatTimeout *
++
+모든 NFS 구성에 대해 이 값을 5로 설정합니다.
+
+

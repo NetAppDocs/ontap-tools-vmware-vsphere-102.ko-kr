@@ -1,0 +1,39 @@
+---
+permalink: manage/certificate-manage.html 
+sidebar: sidebar 
+keywords:  
+summary: VMware vSphere용 ONTAP 툴의 단일 인스턴스를 사용하여 여러 vCenter Server 인스턴스를 관리할 수 있습니다. VMware vSphere용 ONTAP 툴은 VASA Provider에 대한 자체 서명 인증서와 함께 구축됩니다. 이 옵션을 사용하면 VVol 데이터 저장소에 대해 하나의 vCenter Server 인스턴스만 관리할 수 있습니다. 
+---
+= 인증서를 관리합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware vSphere용 ONTAP 툴의 단일 인스턴스를 사용하여 여러 vCenter Server 인스턴스를 관리할 수 있습니다. VMware vSphere용 ONTAP 툴은 VASA Provider에 대한 자체 서명 인증서와 함께 구축됩니다. 이 옵션을 사용하면 VVol 데이터 저장소에 대해 하나의 vCenter Server 인스턴스만 관리할 수 있습니다. 여러 vCenter Server 인스턴스를 관리하고 있고 여러 vCenter Server 인스턴스에서 VVol 기능을 사용하려면 ONTAP Tools Manager 인터페이스를 사용하여 자체 서명된 인증서를 사용자 지정 CA 인증서로 변경해야 합니다. 동일한 인터페이스를 사용하여 모든 인증서를 갱신하거나 새로 고칠 수 있습니다.
+
+
+NOTE: 자체 서명된 사용자 지정 CA로 업그레이드할 경우 다른 도메인에 매핑된 다른 부하 분산 장치 IP 주소가 지원되지 않습니다.
+
+* 단계 *
+
+. 웹 브라우저에서 ONTAP 도구 관리자를 실행합니다. `\https://loadBalanceIP:8443/virtualization/ui/`
+. 구축 중에 제공한 VMware vSphere 관리자 자격 증명용 ONTAP 툴을 사용하여 로그인합니다.
+. 인증서 * > * VASA 공급자 * > * 갱신 * 옵션을 선택하여 인증서를 갱신합니다.
++
+
+NOTE: 인증서가 갱신될 때까지 시스템이 오프라인 상태가 됩니다.
+
+. 자체 서명된 인증서를 사용자 지정 CA 인증서로 업그레이드하려면 * Certificates * > * VASA 공급자 * > * Upgrade to CA * 옵션을 선택합니다.
++
+.. 인증서를 사용자 지정 CA로 업그레이드* 팝업에서 서버 인증서, 서버 인증서 개인 키, 루트 CA 인증서 및 중간 인증서 파일을 업로드합니다. 도구 팁은 인증서에 대한 설명을 제공합니다.
+.. 이 인증서를 생성한 도메인 이름을 입력하십시오.
+.. 업그레이드 * 를 클릭합니다.
++
+
+NOTE: 업그레이드가 완료될 때까지 시스템이 오프라인 상태가 됩니다.
+
+
+
+

@@ -1,0 +1,26 @@
+---
+permalink: configure/configure-network-access.html 
+sidebar: sidebar 
+keywords:  
+summary: 데이터 저장소 마운트 작업에 특정 ESXi 호스트 주소를 몇 개 허용하도록 선택할 수 있습니다. 
+---
+= 네트워크 액세스를 구성합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ESXi 호스트 IP 주소가 여러 개인 경우 호스트에서 검색된 모든 IP 주소가 기본적으로 엑스포트 정책에 추가됩니다. 모든 IP 주소를 내보내기 정책에 추가하지 않으려면 쉼표로 구분된 목록 또는 범위 또는 CIDR에 특정 IP 주소를 허용하거나 각 vCenter에 대해 세 가지 IP 주소를 모두 조합하도록 설정을 제공하십시오.
+
+데이터 저장소 마운트 작업에 몇 가지 특정 ESXi 호스트 주소를 허용하도록 선택할 수 있습니다. 설정이 제공되지 않으면 내보내기 정책에 사전 마운트 단계에서 검색된 모든 IP 주소가 추가됩니다. 설정이 제공되는 경우 VMware vSphere용 ONTAP 툴은 나열된 IP 주소 또는 범위에 속하는 것만 추가합니다. 호스트의 IP 주소 중 나열된 IP 주소에 속하지 않는 경우 해당 호스트의 마운트가 실패합니다.
+
+.단계
+. 을 사용하여 vSphere Client에 로그인합니다 `\https://vcenterip/ui`
+. 바로 가기 페이지에서 플러그인 섹션 아래의 * NetApp ONTAP tools * 를 클릭합니다.
+. ONTAP 도구의 왼쪽 창에서 * 설정 * > * 네트워크 액세스 관리 * > * 편집 * 으로 이동합니다.
++
+쉼표(,)를 사용하여 IP 주소를 구분합니다. 특정 IP 주소 또는 IP 주소 범위 또는 IPv6 주소를 지정할 수 있습니다.
+
+. 저장 * 을 클릭합니다.
+

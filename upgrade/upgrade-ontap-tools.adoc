@@ -1,0 +1,79 @@
+---
+permalink: upgrade/upgrade-ontap-tools.html 
+sidebar: sidebar 
+keywords: upgrade 
+summary: HA 및 비 HA 구현 모두에서 업그레이드가 지원됩니다. 
+---
+= VMware vSphere 10.x용 ONTAP 툴을 10.2로 업그레이드하십시오
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+HA 및 비 HA 구현 모두에서 업그레이드가 지원됩니다.
+
+
+NOTE: VMware vSphere 10.0용 ONTAP 툴을 10.2 릴리즈로 업그레이드하려면 먼저 VMware vSphere 10.1용 ONTAP 툴로 업그레이드한 다음 10.2 릴리즈로 업그레이드해야 합니다.
+
+* 시작하기 전에 *
+
+VMware vSphere 10.0용 ONTAP 도구에서 10.1로 업그레이드하는 경우 업그레이드 작업을 진행하기 전에 다음 단계를 완료해야 합니다.
+
+* 진단 활성화 *
+
+. vCenter Server에서 콘솔을 열고 ONTAP 툴을 엽니다.
+. 유지보수 사용자로 로그인합니다.
+. 4 * 를 입력하여 지원 및 진단 을 선택합니다.
+. 원격 진단 액세스 활성화를 선택하려면 * 2 * 를 입력하십시오.
+. y * 를 입력하여 선택한 암호를 설정합니다.
+. 터미널/putty에서 이전 단계에서 설정한 'DIAG'와 암호로 VM IP 주소에 로그인합니다.
+
+
+* MongoDB 백업 *
+
+다음 명령을 실행하여 MongoDB 백업을 수행합니다.
+
+* kN Exec-IT NTV-mongodb-0 sh-kn은 kubectl-n NTV-system의 별칭입니다.
+* env | grep mongodb_root_password - 포드 내부에서 이 명령을 실행합니다.
+* 'exit'(종료) - 이것을 실행하여 포드에서 나오십시오.
+* kN Exec NTV-mongodb-0--mongodump -u root -p mongodb_root_password--archive=/tmp/mongodb-backup.gz - -gzip -이 명령을 실행하여 위의 명령에서 설정된 Mongo_root_password를 대체합니다.
+* kN CP NTV-mongodb-0:/tmp/mongodb-backup.gz./mongodb-backup.gz - 위의 명령을 사용하여 생성된 MongoDB 백업을 POD에서 호스트로 복사하려면 이 명령을 실행합니다.
+
+
+* 모든 볼륨의 스냅샷을 촬영합니다 *
+
+* 'kn Get PVC' 명령을 실행하고 명령의 출력을 저장합니다.
+* 다음 방법 중 하나를 사용하여 모든 볼륨의 스냅샷을 하나씩 생성합니다.
++
+** CLI에서 _volume snapshot create -vserver <vserver_name> -volume <volume_name> -snapshot <snapshot_name>_ 명령을 실행합니다
+** ONTAP 시스템 관리자 사용자 인터페이스에서 검색 표시줄에서 볼륨을 이름으로 검색한 다음 이름을 클릭하여 해당 볼륨을 엽니다. 스냅샷으로 이동하여 해당 볼륨의 스냅샷을 추가합니다.
+
+
+
+
+* vCenter에서 VMware vSphere VM용 ONTAP 툴의 스냅샷 생성(HA 구축 시 VM 3개, 비 HA 구축 시 VM 1개) *
+
+* vSphere Client 사용자 인터페이스에서 VM을 선택합니다.
+* 스냅샷 탭으로 이동하고 * 스냅샷 촬영 * 버튼을 클릭합니다.
+
+
+업그레이드를 수행하기 전에 로그 번들에서 접두사 "generate-support-bundle-job"이 있는 완료된 Pod를 삭제하십시오. 지원 번들 생성이 진행 중인 경우 완료될 때까지 기다린 다음 Pod를 삭제하십시오.
+
+* 단계 *
+
+. VMware vSphere용 ONTAP 툴을 컨텐츠 라이브러리로 업그레이드합니다.
+. 기본 VM 페이지에서 * Actions * > * Edit Settings * 를 선택합니다
+. 편집 설정 창의 * CD/DVD 드라이브 * 필드에서 콘텐츠 라이브러리 ISO 파일을 선택합니다.
+. ISO 파일을 선택하고 * 확인 * 을 클릭합니다. CD/DVD 드라이브 * 필드에서 연결됨 확인란을 선택합니다. image:../media/primaryvm-edit-settings.png["설정을 편집합니다"]
+. vCenter Server에서 콘솔을 열고 ONTAP 툴을 엽니다.
+. 유지보수 사용자로 로그인합니다.
+. 3 * 을 입력하여 System Configuration 메뉴를 선택합니다.
+. 7 * 을 입력하여 업그레이드 옵션을 선택합니다.
+. 를 업그레이드하면 다음 작업이 자동으로 수행됩니다.
++
+.. 인증서 업그레이드
+.. 원격 플러그인 업그레이드
+
+
+

@@ -1,0 +1,10 @@
+---
+section: deploy
+title: VMware vSphere용 ONTAP 툴을 구축합니다
+entries:
+- title: 필수 구성 요소
+  url: "/deploy/prerequisites.html"
+- title: ONTAP 툴 구축
+  url: "/deploy/ontap-tools-deployment.html"
+- title: 배포 오류 코드입니다
+  url: "/deploy/deployment-error-codes.html"

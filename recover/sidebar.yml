@@ -1,0 +1,6 @@
+---
+section: recover
+title: ONTAP 도구를 복구합니다
+entries:
+- title: ONTAP 도구 설정을 복구합니다
+  url: "/recover/recovery-deployment.html"

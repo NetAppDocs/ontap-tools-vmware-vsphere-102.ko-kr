@@ -1,0 +1,59 @@
+---
+permalink: manage/storage-view-datastore.html 
+sidebar: sidebar 
+keywords: Remove vVol datastore 
+summary: VMware vSphere용 ONTAP 툴의 구성 탭에 있는 ONTAP 스토리지 뷰는 데이터 저장소 및 해당 볼륨과 관련된 데이터를 제공합니다. 
+---
+= 데이터 저장소에 대한 ONTAP 스토리지 뷰
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP Tools for VMware vSphere의 Configure 탭 아래에 있는 ONTAP 스토리지 뷰는 데이터 저장소 및 해당 볼륨과 관련된 데이터를 제공합니다. 이 뷰는 데이터 저장소의 스토리지 측면도를 제공합니다.
+
+
+
+== NFS 데이터 저장소에 대한 ONTAP 스토리지 뷰
+
+.단계
+. vSphere Client에서 NFS 데이터 저장소로 이동합니다.
+. 오른쪽 창에서 * Configure * 탭을 클릭합니다.
+. NetApp ONTAP tools *> * ONTAP 스토리지 * 를 선택합니다. 오른쪽 창에 * Storage details * 및 * nfs details * 가 표시됩니다.
++
+** 스토리지 세부 정보 페이지에는 스토리지 백엔드, 애그리게이트 및 볼륨에 대한 정보가 포함되어 있습니다.
+** NFS 세부 정보 페이지에는 NFS 데이터 저장소와 관련된 데이터가 포함되어 있습니다.
+
+
+
+
+
+
+== VMFS 데이터 저장소에 대한 ONTAP 스토리지 뷰
+
+.단계
+. vSphere Client에서 VMFS 데이터 저장소로 이동합니다.
+. 오른쪽 창에서 * Configure * 탭을 클릭합니다.
+. NetApp ONTAP tools *> * ONTAP 스토리지 * 를 선택합니다. NVMe/TCP 또는 NVMe/FC 프로토콜의 경우 * 스토리지 세부 정보 * 및 * LUN 세부 정보 * 또는 * 네임스페이스 세부 정보 * 가 오른쪽 창에 표시됩니다.
++
+** 스토리지 세부 정보 페이지에는 스토리지 백엔드, 애그리게이트 및 볼륨에 대한 정보가 포함되어 있습니다.
+** LUN 세부 정보 페이지에는 LUN과 관련된 데이터가 포함되어 있습니다.
+** VMFS 데이터 저장소에 NVMe/TCP 또는 NVMe/FC 프로토콜을 사용하는 경우 네임스페이스 세부 정보 페이지에 네임스페이스와 관련된 데이터가 포함됩니다.
+
+
+
+
+
+
+== VVol 데이터 저장소에 대한 ONTAP 스토리지 뷰
+
+.단계
+. vSphere Client에서 VVols 데이터 저장소로 이동합니다.
+. 오른쪽 창에서 * Configure * 탭을 클릭합니다.
+. NetApp ONTAP tools *> * ONTAP 스토리지 * 를 선택합니다.
+. ONTAP 스토리지 보기에는 모든 볼륨이 나열됩니다. ONTAP storage 창에서 스토리지를 확장하거나 제거할 수 있습니다.
++
+link:../manage/expand-storage-of-vvol-datastore.html["VVOL 데이터 저장소를 확장합니다"]섹션의 지침에 따라 VVols 데이터 저장소를 추가하고 link:../manage/remove-storage-from-a-vvols-datastore.html["VVOL 데이터 저장소를 축소합니다"] 섹션을 따라 데이터 저장소를 삭제합니다.
+
+

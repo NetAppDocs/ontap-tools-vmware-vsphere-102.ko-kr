@@ -1,0 +1,61 @@
+---
+permalink: recover/recovery-deployment.html 
+sidebar: sidebar 
+keywords:  
+summary: VMware vSphere 설정용 ONTAP 툴을 잃어버렸지만 ONTAP가 작동한다면 ONTAP를 사용하여 VMware vSphere 설정용 ONTAP 툴을 복구할 수 있습니다. 설정을 잃으면 설정을 정상적으로 종료합니다. 
+---
+= VMware vSphere 설정을 위한 ONTAP 툴을 복구합니다
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+VMware vSphere 설정용 ONTAP 툴을 잃어버리면 ONTAP 볼륨 데이터에 제공되는 데이터를 사용하여 VMware vSphere 설정용 ONTAP 툴을 복구할 수 있습니다. 설정을 잃으면 설정을 정상적으로 종료합니다.
+
+
+NOTE: vCenter Server 또는 ONTAP 데이터 관리 소프트웨어에 문제가 있는 경우 VMware vSphere 설정용 ONTAP 툴을 복구할 수 없습니다.
+
+* 단계 *
+
+. vSphere 서버에 로그인합니다.
+. 생성한 리소스 풀 또는 OVA를 구축할 노드 클러스터 또는 호스트로 이동합니다.
+. 필요한 위치를 마우스 오른쪽 버튼으로 클릭하고 * Deploy OVF template * 를 선택합니다.
+. URL을 통해 _.ova_ 파일의 OVA 파일을 선택하거나 _.ova_ 파일이 저장된 폴더를 찾은 후 * 다음 * 을 클릭합니다.
++
+
+NOTE: 복구 설정 설치에 사용한 것과 동일한 OVA 빌드를 사용해야 합니다.
+
+. 가상 머신의 이름과 폴더를 선택하고 * Next * 를 선택합니다.
+. 호스트를 선택하고 * Next * 를 선택합니다.
+. 템플릿 요약을 검토하고 * 다음 * 을 선택합니다.
+. 사용권 계약을 읽고 동의한 후 * Next * 를 선택합니다.
+. Configuration * 창에서 * Recovery * 옵션을 선택합니다.
+. Select storage * 창에서 구성 및 디스크 파일의 스토리지를 선택합니다.
+. 네트워크 선택 * 창에서 각 소스 네트워크에 대한 대상 네트워크를 선택합니다.
++
+
+NOTE: 로드 밸런서 IP 주소 및 Kubernetes API Server IP 주소를 유지해야 합니다. 노드 IP 주소를 변경하거나 동일한 IP 주소를 유지할 수 있습니다.
+
+. Customize template * 창에서 필요한 세부 정보를 입력하고 * Next * 를 클릭합니다
++
+
+NOTE: SVM 범위를 사용하도록 설정한 경우 관리 IP 주소를 사용하여 SVM 지원을 이미 사용하도록 설정해야 합니다.
+
+. 완료 준비 * 창에서 세부 정보를 검토하고 * 마침 * 을 선택합니다.
++
+구축 작업이 생성되면 vSphere 작업 표시줄에 진행 상황이 표시됩니다.
+
+. 작업 완료 후 VM의 전원을 켭니다.
++
+설치가 시작됩니다. VM의 웹 콘솔에서 설치 진행률을 추적할 수 있습니다. 설치 과정에서 노드 구성이 검증됩니다. OVF 양식의 Customize(사용자 지정) 템플릿 아래에 있는 여러 섹션에 제공된 입력의 유효성을 검사합니다. 일치하지 않는 경우 대화 상자에 시정 조치를 취하라는 메시지가 표시됩니다.
+
+. 대화 상자 프롬프트에서 필요한 사항을 변경합니다. Tab 버튼을 사용하여 패널을 탐색하고 * OK * 를 선택합니다.
++
+제공된 값의 유효성을 다시 검사합니다. VMware vSphere용 ONTAP 툴을 사용하면 잘못된 값을 세 번 수정할 수 있습니다. 세 번 시도해도 문제를 해결할 수 없는 경우 제품 설치가 중지되고 새 VM에서 설치를 시도하는 것이 좋습니다.
+
+
+
+설치가 완료되면 웹 콘솔에 VMware vSphere용 ONTAP 툴의 상태가 표시됩니다.
+
+설치가 완료되면 페이지의 지침에 따라 하드웨어 요구 사항을 수동으로 편집해야 link:../deploy/prerequisites.html["VMware vSphere용 ONTAP 툴을 구축하기 위한 사전 요구 사항"] 합니다.
