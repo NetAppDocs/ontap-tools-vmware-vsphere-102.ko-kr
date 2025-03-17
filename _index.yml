@@ -28,8 +28,6 @@ indexpage:
       url: "/protect/enable-storage-replication-adapter.html"
   - title: 더 많은 리소스
     links:
-    - title: VMware vSphere 10.1용 ONTAP 툴 설명서
-      url: https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere-101/index.html
     - title: VMware vSphere 9용 ONTAP 툴의 이전 버전에 대한 설명서
       url: https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=63792
     - title: NetApp 기술 자료 - ONTAP 툴
