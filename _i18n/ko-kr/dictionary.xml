@@ -594,14 +594,6 @@
   <block id="a883deebdfbfeb611d06d3f55178ccbf" category="doc">ESXi 호스트 값을 설정합니다</block>
   <block id="9232ab7e918fc93452c2dc7c8fab1b8c" category="paragraph">ESXi 호스트에서 다음 값을 설정할 수 있습니다.</block>
   <block id="ab9d8dfb65807487a899df1683e128fa" category="section-title">HBA/CNA 어댑터 설정</block>
-  <block id="d3c41b5a4cf556f3a598cc1221e08ee4" category="paragraph">NetApp 스토리지 시스템에 대해 권장되는 HBA 시간 초과 설정을 설정합니다.</block>
-  <block id="15ed0ba40712ee81b72a8792c890eedc" category="list-text">* Disk.QFullSampleSize *</block>
-  <block id="66ea40466e5ef8258f8b6db3cdc7106f" category="paragraph">모든 설정에 대해 이 값을 32로 설정합니다. 이 값을 설정하면 I/O 오류가 발생하지 않습니다.</block>
-  <block id="39588925ce067cdd61e04bbd64e51dcb" category="list-text">* Disk.QFullThreshold *</block>
-  <block id="9bd553240078f69295a0b47ce73fd074" category="paragraph">모든 설정에 대해 이 값을 8로 설정합니다. 이 값을 설정하면 I/O 오류가 방지됩니다.</block>
-  <block id="81ec4070dd281a6d1920f79a9ecb8f0d" category="list-text">* Emulex FC HBA 시간 초과 *</block>
-  <block id="b4dbfc2d52627e923cbb563a31ff756d" category="paragraph">기본값을 사용합니다.</block>
-  <block id="5ecf7b7910834f22ac8988030833dbcc" category="list-text">* QLogic FC HBA 시간 초과 *</block>
   <block id="c803cf4eb4cbf3a6b12b1e1cc3443970" category="section-title">MPIO 설정</block>
   <block id="ce2fddb4782cb083028eb028f1b74ba0" category="paragraph">MPIO 설정은 NetApp 스토리지 시스템에 대한 기본 경로를 정의합니다. MPIO 설정은 상호 연결 케이블을 통과하는 최적화되지 않은 경로와 달리 사용 가능한 경로 중 최적화되는 경로를 결정하고 기본 경로를 이러한 경로 중 하나로 설정합니다.</block>
   <block id="d16644a258624270fbc604b4a9c10811" category="paragraph">고성능 환경에서 또는 단일 LUN 데이터 저장소를 사용하여 성능을 테스트하는 경우 기본 IOPS 설정인 1000에서 값 1로 라운드 로빈(VMW_PSP_RR) PSP(경로 선택 정책)의 로드 밸런싱 설정을 변경하는 것이 좋습니다.</block>
@@ -1797,7 +1789,6 @@
   <block id="48bc2d028cb2a507ef974230ca3ba793" category="sidebar">원격 진단 구성</block>
   <block id="eaf78ca462bf848b7c59c410077002b6" category="sidebar">데이터 저장소를 보호합니다</block>
   <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">더 많은 리소스</block>
-  <block id="c8af2a359991324c5027f67981fcf118" category="sidebar">VMware vSphere 10.1용 ONTAP 툴 설명서</block>
   <block id="425e3f9f511fc3cc32fb57688da1ec81" category="sidebar">VMware vSphere 9용 ONTAP 툴의 이전 버전에 대한 설명서</block>
   <block id="4c3c39a603eb21106d2df2836d4b456c" category="sidebar">NetApp 기술 자료 - ONTAP 툴</block>
   <block id="72393f9ef0b6b69526a30ac7ce5276bc" category="sidebar">NetApp 커뮤니티 - ONTAP 툴</block>
@@ -1837,4 +1828,9 @@
   <block id="5dd03e8d039863e563e049be198c3fd3" category="sidebar">릴리즈 노트</block>
   <block id="ed8359854c43609fca7bc8a46cca9eac" category="sidebar">ONTAP tools 9 및 ONTAP tools 10 기능 비교</block>
   <block id="a2fa58344be7fbd9a2be0320a8df0f77" category="sidebar">ONTAP 툴을 업그레이드합니다</block>
+  <block id="395ddb6ca1b9948e32145f8fa1a9201e" category="paragraph">다음 매개 변수를 기본값으로 설정합니다.</block>
+  <block id="117704664d6cada78ac3107380f63d23" category="list-text">Disk.QFullSampleSize 를 참조하십시오</block>
+  <block id="f66a3c183f0e736240b77f8b755c880e" category="list-text">Disk.QFullThreshold를 참조하십시오</block>
+  <block id="19c08de7404551288e1274186e039ef4" category="list-text">Emulex FC HBA 시간 초과</block>
+  <block id="d46cddda4da7ec11f17472d11df95b68" category="list-text">QLogic FC HBA 시간 초과</block>
 </blocks>
