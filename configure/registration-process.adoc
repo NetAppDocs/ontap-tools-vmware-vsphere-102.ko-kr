@@ -11,7 +11,7 @@ summary: VMware vSphere 원격 플러그인 인터페이스용 ONTAP 툴을 사�
 
 
 [role="lead"]
-VMware vSphere 원격 플러그인 인터페이스용 ONTAP 툴을 사용하여 vCenter Server 인스턴스에 VASA 공급자를 등록 및 등록 취소할 수 있습니다. VASA Provider Settings 섹션에는 선택한 vCenter Server에 대한 VASA Provider 등록 상태가 표시됩니다.
+VMware vSphere용 ONTAP 툴을 사용하여 vCenter Server 인스턴스에 VASA Provider를 등록할 수 있습니다. VASA Provider settings 섹션에는 선택한 vCenter Server에 대한 VASA Provider 등록 상태가 표시됩니다. 다중 vCenter 배포에서는 각 vCenter Server 인스턴스에 사용자 지정 CA 인증서가 있는지 확인하세요.
 
 * 단계 *
 

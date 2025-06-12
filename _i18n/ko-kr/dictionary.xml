@@ -342,7 +342,6 @@
   <block id="7f2d9eb042fad8493c138993f867cd80" category="paragraph">목록이 새로 고쳐지고 목록에서 새로 추가된 스토리지 백엔드를 볼 수 있습니다.</block>
   <block id="f6c30a782639c90ebe44f3f343922077" category="summary">vCenter Server 인스턴스는 호스트, VM(가상 머신) 및 스토리지 백엔드를 제어할 수 있는 중앙 관리 플랫폼입니다.</block>
   <block id="6245e46af5a3bdaf57696763c4214c70" category="doc">vCenter Server 인스턴스를 추가합니다</block>
-  <block id="9a22df67797f0968951385551d26d202" category="paragraph">vCenter Server는 호스트, VM(가상 머신) 및 스토리지 백엔드를 제어할 수 있는 중앙 관리 플랫폼을 제공합니다.</block>
   <block id="aaf638e0edd71bac35fef1b1149f3843" category="paragraph">VMware vSphere용 ONTAP 툴 인스턴스 하나를 사용하여 여러 vCenter Server 인스턴스를 추가하고 관리할 수 있습니다.</block>
   <block id="0336e0a2e9f5b95c0d4178d3186ecbf6" category="list-text">사이드바에서 * vCenters * 를 선택합니다.</block>
   <block id="4287076fd3b7cc772889cb75d012c773" category="list-text">온보드 vCenter Server 인스턴스에 * 추가 * 를 선택하고 vCenter IP 주소/호스트 이름, 사용자 이름, 암호 및 포트 세부 정보를 제공합니다.</block>
@@ -676,7 +675,6 @@
   <block id="02ecc951ba9c7de4ba8def4213f1982e" category="list-text">보호된 호스트 클러스터를 보려면 * NetApp ONTAP tools * &gt; * 보호 * &gt; * 호스트 클러스터 관계 * 로 이동하십시오.</block>
   <block id="88cea8a228e76d96b5b014b926e19795" category="summary">VMware vSphere 원격 플러그인 인터페이스용 ONTAP 툴을 사용하여 vCenter Server 인스턴스에 VASA 공급자를 등록 및 등록 취소할 수 있습니다.</block>
   <block id="062e7967273cea76dff9c3579a0c44db" category="doc">vCenter Server 인스턴스에 VASA Provider를 등록합니다</block>
-  <block id="b59d64b98fd315f6b2bb4cfbeef9a7fd" category="paragraph">VMware vSphere 원격 플러그인 인터페이스용 ONTAP 툴을 사용하여 vCenter Server 인스턴스에 VASA 공급자를 등록 및 등록 취소할 수 있습니다. VASA Provider Settings 섹션에는 선택한 vCenter Server에 대한 VASA Provider 등록 상태가 표시됩니다.</block>
   <block id="711a24c1ed1e14106df5e83af675d10f" category="list-text">설정 * &gt; * VASA 공급자 설정 * 을 선택합니다. VASA 공급자 등록 상태가 등록되지 않음 으로 표시됩니다.</block>
   <block id="7bd80420c7575554792093f90dbbe6ed" category="list-text">register * 버튼을 클릭하여 VASA Provider를 등록합니다.</block>
   <block id="2a8034ce8dbfe14fabe94e3ca6c7b860" category="list-text">VASA 공급자 이름을 입력하고 VMware vSphere 애플리케이션 사용자 자격 증명을 위한 ONTAP 툴을 제공한 후 * REGISTER * 를 클릭합니다.</block>
@@ -1833,4 +1831,7 @@
   <block id="f66a3c183f0e736240b77f8b755c880e" category="list-text">Disk.QFullThreshold를 참조하십시오</block>
   <block id="19c08de7404551288e1274186e039ef4" category="list-text">Emulex FC HBA 시간 초과</block>
   <block id="d46cddda4da7ec11f17472d11df95b68" category="list-text">QLogic FC HBA 시간 초과</block>
+  <block id="a9a74d98e6d11230d876df92acb424fd" category="paragraph">vCenter Server 인스턴스를 VMware vSphere용 ONTAP 툴에 추가하여 vCenter Server 환경에서 가상 데이터 저장소를 구성, 관리 및 보호할 수 있습니다. 여러 vCenter Server 인스턴스를 추가하는 경우 ONTAP 도구와 각 vCenter Server 간의 보안 통신을 위해 사용자 지정 CA 인증서가 필요합니다.</block>
+  <block id="56564ecb20e9cb45429b432b22f216f4" category="admonition">MPIO 설정은 NVMe, NVMe/FC 및 NVMe/TCP 프로토콜에는 적용되지 않습니다.</block>
+  <block id="07c9ecda15aaf26d8eef3770025ec27c" category="paragraph">VMware vSphere용 ONTAP 툴을 사용하여 vCenter Server 인스턴스에 VASA Provider를 등록할 수 있습니다. VASA Provider settings 섹션에는 선택한 vCenter Server에 대한 VASA Provider 등록 상태가 표시됩니다. 다중 vCenter 배포에서는 각 vCenter Server 인스턴스에 사용자 지정 CA 인증서가 있는지 확인하세요.</block>
 </blocks>
