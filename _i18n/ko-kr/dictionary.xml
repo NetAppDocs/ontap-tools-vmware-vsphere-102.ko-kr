@@ -534,7 +534,6 @@
   <block id="7b30cf0bf941c59665059610f32765b2" category="list-text">VMware vSphere 7 릴리즈의 경우 VMware 사이트의 지침에 따라<block ref="78ea54819b62ddbcd655a4671d8a5b88" category="inline-link-rx"></block> NVMe/TCP 소프트웨어 어댑터를 구성합니다. VMware vSphere 8 릴리즈의 경우, 에 따라<block ref="d7f2ab4a5e61632cb53ab17b5775b973" category="inline-link-rx"></block> NVMe/TCP 소프트웨어 어댑터를 구성합니다.</block>
   <block id="8fd43ee482a4e281b8feee6762fb22d2" category="inline-link-macro">스토리지 시스템 및 호스트를 검색합니다</block>
   <block id="f897e941469c1def0ceaad5904784393" category="inline-link">vSphere 8.0 업데이트 1 및 VMFS 데이터 저장소용 ONTAP 9.13.1을 사용하여 NVMe/TCP를 구성하는 방법</block>
-  <block id="9fc56e301e08de92885a49e832294c9b" category="list-text"><block ref="d7dfa373f3b590500a261c503f3d702f" category="inline-link-macro-rx"></block>ESXi 호스트에서 작업을 실행합니다. 자세한 내용은 을 참조하십시오<block ref="08964a7c7e6cd9155ed7286907a68824" category="inline-link-rx"></block></block>
   <block id="b52744b7fe6a50a639b45ebe19c17f96" category="list-text">NVMe/FC 프로토콜을 사용하는 경우 다음 단계를 수행하여 ESXi 호스트를 구성합니다.</block>
   <block id="0d2e4cff54d6f550e6b15a47007a161c" category="list-text">ESXi 호스트에서 NVMe-oF(NVMe over Fabrics)를 사용하도록 설정합니다.</block>
   <block id="802068251371051bc6ae5a5f001b4460" category="list-text">SCSI 조닝을 완료합니다.</block>
@@ -1659,7 +1658,6 @@
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="doc">릴리스 정보</block>
   <block id="620a99069ca21ddda63311030de128d1" category="paragraph">VMware vSphere 10.2용 ONTAP 툴에서 사용할 수 있는 새롭고 향상된 기능에 대해 알아보십시오.</block>
   <block id="a0f2f641913db0ffffab76fafad81203" category="inline-xref-macro">VMware vSphere 10.2용 ONTAP 툴의 새로운 기능</block>
-  <block id="c796cc4c6989b5a604c6eef24c2de84d" category="paragraph">새로운 기능 및 향상된 기능의 전체 목록은 를 참조하십시오<block ref="815f650045efcb134f42d68a8e4fca4c" category="inline-xref-macro-rx"></block>.</block>
   <block id="66e41f837b141c5c933d4281f7abe97c" category="paragraph">VMware vSphere 9용 ONTAP 툴에서 ONTAP Tools 10.2로의 마이그레이션이 올바른 방법인지 자세히 알아보려면 을 참조하십시오<block ref="947428ca1064f8d19137fb8976698998" category="inline-xref-macro-rx"></block>. VMware vSphere 9.10D2, 9.11D4, 9.12 및 9.13 릴리스의 ONTAP 툴에서 ONTAP 툴 10.2로의 마이그레이션이 지원됩니다.</block>
   <block id="41dd8791118d286f9dd16dda93fb4676" category="inline-link">VMware vSphere 10.2용 ONTAP 툴 릴리즈 노트</block>
   <block id="bb8eb6c356c3f564a1613f6389297778" category="paragraph">자세한 내용은 를<block ref="4c445cf2a5e8fa11ece1f426d363bfb8" category="inline-link-rx"></block>참조하십시오. 릴리스 정보에 액세스하려면 NetApp 계정으로 로그인하거나 계정을 만들어야 합니다.</block>
@@ -1834,4 +1832,6 @@
   <block id="a9a74d98e6d11230d876df92acb424fd" category="paragraph">vCenter Server 인스턴스를 VMware vSphere용 ONTAP 툴에 추가하여 vCenter Server 환경에서 가상 데이터 저장소를 구성, 관리 및 보호할 수 있습니다. 여러 vCenter Server 인스턴스를 추가하는 경우 ONTAP 도구와 각 vCenter Server 간의 보안 통신을 위해 사용자 지정 CA 인증서가 필요합니다.</block>
   <block id="56564ecb20e9cb45429b432b22f216f4" category="admonition">MPIO 설정은 NVMe, NVMe/FC 및 NVMe/TCP 프로토콜에는 적용되지 않습니다.</block>
   <block id="07c9ecda15aaf26d8eef3770025ec27c" category="paragraph">VMware vSphere용 ONTAP 툴을 사용하여 vCenter Server 인스턴스에 VASA Provider를 등록할 수 있습니다. VASA Provider settings 섹션에는 선택한 vCenter Server에 대한 VASA Provider 등록 상태가 표시됩니다. 다중 vCenter 배포에서는 각 vCenter Server 인스턴스에 사용자 지정 CA 인증서가 있는지 확인하세요.</block>
+  <block id="5d8319afdbfb500a337d6daee9e2f4d1" category="list-text">ESXi 호스트에서 <block ref="c076a6b54534640d64418e3f25ccabbb" category="inline-link-macro-rx"></block> 작업을 실행하십시오. 자세한 내용은 <block ref="08964a7c7e6cd9155ed7286907a68824" category="inline-link-rx"></block>을(를) 참조하십시오.</block>
+  <block id="1fc97a07e7c9e86fae8754d4d46be407" category="paragraph">새로운 기능 및 개선 사항의 전체 목록은 <block ref="8b69af8fb592f7967dc64a5024118503" category="inline-link-macro-rx"></block>를 참조하십시오.</block>
 </blocks>
